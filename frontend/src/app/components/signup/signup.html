@@ -1,0 +1,73 @@
+<div class="auth-wrapper d-flex align-items-center justify-content-center vh-100" 
+     style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            url('https://wallpapers.com/images/hd/hair-salon-background-ocd8o0oatvbqyg39.jpg') no-repeat center center; 
+            background-size: cover; position: relative;">
+  
+  <div class="card border-0 shadow-lg p-2" 
+       style="width: 28rem; border-radius: 30px; 
+              background: rgba(255, 255, 255, 0.95); 
+              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); z-index: 10;">
+    
+    <div class="card-body p-4">
+      
+      <div class="text-center mb-4">
+        <div class="icon-box mb-2" style="font-size: 3rem; color: #d63384;">
+          <i class="bi bi-person-plus-fill"></i>
+        </div>
+        <h2 class="fw-bold mb-1" style="color: #1a1a1a; letter-spacing: 2px;">CREATE ACCOUNT</h2>
+        <p class="small text-uppercase fw-bold" style="color: #d63384; letter-spacing: 1px;">Join GLAMOUR HUB to book your slots</p>
+      </div>
+      
+      <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+        
+        <div class="form-floating mb-3 shadow-sm" style="border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+          <input type="text" formControlName="username" class="form-control border-0 bg-white" id="firstName" placeholder="Full Name" style="color: #333;">
+          <label for="firstName" class="fw-bold" style="color: #555 !important; opacity: 1;">FULL NAME</label>
+          
+          <div *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid" class="text-danger small ms-3 mt-1">
+            <i class="bi bi-exclamation-circle me-1"></i> Name is required (min 3 chars).
+          </div>
+        </div>
+        
+        <div class="form-floating mb-3 shadow-sm" style="border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+          <input type="email" formControlName="email" class="form-control border-0 bg-white" id="signupEmail" placeholder="name@example.com" style="color: #333;">
+          <label for="signupEmail" class="fw-bold" style="color: #555 !important; opacity: 1;">EMAIL ADDRESS</label>
+          
+          <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid" class="text-danger small ms-3 mt-1">
+            <i class="bi bi-exclamation-circle me-1"></i> Please enter a valid email.
+          </div>
+        </div>
+        
+        <div class="mb-4 position-relative shadow-sm" style="border-radius: 12px; overflow: hidden; border: 1px solid #eee;">
+          <div class="form-floating">
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" class="form-control border-0 bg-white" id="signupPassword" placeholder="Password" style="color: #333; padding-right: 50px;">
+            <label for="signupPassword" class="fw-bold" style="color: #555 !important; opacity: 1;">PASSWORD</label>
+          </div>
+          <span (click)="togglePassword()" class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer; z-index: 10;">
+            <i [class]="showPassword ? 'bi bi-eye' : 'bi bi-eye-slash'" style="color: #d63384; font-size: 1.2rem;"></i>
+          </span>
+          
+          <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid" class="text-danger small ms-3 mt-1">
+            <i class="bi bi-exclamation-circle me-1"></i> Minimum 6 characters required.
+          </div>
+        </div>
+        
+        <button class="btn w-100 py-3 mb-3 shadow-lg fw-bold text-uppercase text-white" 
+                type="submit" 
+                [disabled]="signupForm.invalid" 
+                style="border-radius: 12px; letter-spacing: 2px; 
+                       background: linear-gradient(45deg, #d63384, #ff85a1); 
+                       border: none; transition: 0.3s ease;">
+          SIGN UP NOW
+        </button>
+        
+        <div class="text-center mt-2">
+          <small class="text-muted fw-bold">Already a member? 
+            <a routerLink="/login" class="fw-bold text-decoration-none" style="color: #d63384; cursor: pointer;">Login Here</a>
+          </small>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

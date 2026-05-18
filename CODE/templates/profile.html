@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Subject Marks Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #66203b;
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 50px auto;
+            border-radius: 8px;
+            border-left: 1px solid rgba(255, 255, 255, 0.692);
+            box-shadow: 3px 3px 5px rgba(86, 60, 231, 0.37);
+            border-top: 1px solid rgba(255, 255, 255, 0.678);
+            background-color: rgba(246, 248, 248, 0.678);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color:#6d6be6;
+            color: #fff;
+        }
+        body{
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-image: url({{url_for('static',filename='grad.jpg')}});
+
+            }
+        a:hover {
+                 background-color: #ddd;
+                color: black;
+            }
+        .previous {
+  background-color: #f1f1f1;
+  color: black;
+            }
+        .round {
+                  border-radius: 75%;
+           }
+</style>
+</head>
+<body>
+    
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Mark</th>
+    </tr>
+    <tr>
+        <td>Maths</td>
+        <td>{{ Maths }}</td>
+    </tr>
+    <tr>
+        <td>Physics</td>
+        <td>{{ Physics }}</td>
+    </tr>
+    <tr>
+        <td>Chemistry</td>
+        <td>{{ Chemistry }}</td>
+    </tr>
+    <tr>
+        <td>Biology</td>
+        <td>{{ Biology }}</td>
+    </tr>
+    <tr>
+        <td>Computer_Science</td>
+        <td>{{ Computer_Science }}</td>
+    </tr>
+
+    <tr>
+        <td>Commerce</td>
+        <td>{{ Commerce }}</td>
+    </tr>
+
+    <tr>
+        <td>Economics</td>
+        <td>{{ Economic }}</td>
+    </tr>
+
+    <tr>
+        <td>course_name</td>
+        <td>{{ course_name }}</td>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align: center;">
+            <p>Given course through prediction is <strong>{{ course_name }}</strong>.</p>
+        </td>
+    </tr>
+
+</table>
+<a onclick="history.back()" class="previous round">&#8249;</a>
+</body>
+</html>

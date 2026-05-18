@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Marks Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 400px;
+            background-color:rgba(136, 51, 51, 0.973);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 1px solid rgba(255, 255, 255, 0.692);
+            box-shadow: 3px 3px 5px rgba(86, 60, 231, 0.37);
+            border-top: 1px solid rgba(255, 255, 255, 0.678);
+            background-color: rgba(246, 248, 248, 0.678);
+        }
+
+        h2 {
+            text-align: center;
+            color:black;
+        }
+        body{
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-image: url({{url_for('static',filename='book2.jpeg')}});
+
+}
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color:black;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            background: transparent;
+            border: 1px solid #d86993;
+            color: black;
+            border-bottom: 1px solid black;
+            border-top: 1px solid wheat;
+            opacity: .8;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        a:hover {
+                 background-color: #ddd;
+                color: black;
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+.round {
+  border-radius: 50%;
+}
+        button {
+            background-color:blue;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color:rgb(109, 111, 236);
+        }
+    </style>
+</head>
+<body>
+    <a onclick="history.back()" class="previous round">&#8249;</a>
+<div class="container">
+    <h2>Enter Subject Marks</h2>
+    <form action="/student_mark" method="post">
+        <label for="maths">Maths Mark:</label>
+        <input type="number" id="maths" name="maths" required>
+
+        <label for="physics">Physics Mark:</label>
+        <input type="number" id="physics" name="physics" required>
+
+        <label for="chemistry">Chemistry Mark:</label>
+        <input type="number" id="chemistry" name="chemistry" required>
+
+        <label for="Biology">Biology Mark:</label>
+        <input type="number" id="Biology" name="Biology" required>
+
+        <label for="Computer_Science">Computer Science Mark:</label>
+        <input type="number" id="Computer_Science" name="Computer_Science" required>
+
+        <label for="Commerce">Commerce Mark:</label>
+        <input type="number" id="Commerce" name="Commerce" required>
+
+        <label for="Economic">Economics Mark:</label>
+        <input type="number" id="Economic" name="Economic" required>
+
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>

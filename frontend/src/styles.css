@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-green: #2d5a27;
+  --soft-green: #e8f5e9;
+  --accent-gold: #c5a059;
+  --dark-text: #2c3e50;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark-text);
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+              url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-green) !important;
+  border: none !important;
+  padding: 10px 25px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+}
+
+.btn-success {
+  background-color: var(--accent-gold) !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 50px !important;
+}
+
+nav {
+  background: white !important;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3, h4, h5, .fw-bold {
+  color: var(--primary-green);
+  font-weight: 700;
+}
